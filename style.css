@@ -8,12 +8,56 @@ body{
     ;
   }
 
+  div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: wrap;
+    flex-direction: column;
+  }
+
+  form{
+        display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: wrap;
+    flex-direction: column;
+  }
+  
 
   h1 {
+    display: flex;
     font-size: 4rem;
-    
+    flex: 1 100%;
+    justify-content: center;
+    align-items: center;
   }
 
   p {
     font-size: 4rem;
+    flex: 1 100%
+  }
+
+  input {
+    width: 40%;
+    border: none;
+    border-radius: 10px;
+    padding: 5px;
+    margin-top: 10px;
+
+  }
+
+
+ .btn {
+  color:#fff;
+	background-color:#e74c3c;
+	outline: none;
+  border: 0;
+  color: #fff;
+	padding: 10px 20px;
+	text-transform:uppercase;
+	margin-top:20px;
+	border-radius:2px;
+	cursor:pointer;
+	position:relative;
   }
