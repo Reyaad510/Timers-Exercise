@@ -1,6 +1,8 @@
 // Countdown Exercise
 let counterText = document.querySelector("#counter");
 let counterDiv = document.querySelector("#counterDiv");
+let form = document.querySelector("#countdownForm");
+let input = document.querySelector("input[type='number']");
 
 const countdown = (num) => {
   const stopInterval = setInterval(function () {
@@ -9,11 +11,16 @@ const countdown = (num) => {
     // once num reaches zero returns "DONE" and stops the interval from continuing
     if (num === 0) {
       const done = document.createElement("p");
+      const resetBtn = document.createElement("button");
       done.innerText = "Done!";
+      resetBtn.innerText = "Reset!";
+      resetBtn.classList.add("btn");
 
       counterText.innerText = num;
       counterText.remove();
-      counterDiv.append(done);
+      form.remove();
+      counterDiv.prepend(done);
+      counterDiv.append(resetBtn);
       clearInterval(stopInterval);
     } else {
       // Continue countdown with number being one less until reach zero
@@ -24,7 +31,11 @@ const countdown = (num) => {
   }, 1000);
 };
 
-countdown(5);
+form.addEventListener("submit", function (e) {
+  e.preventDefault();
+  countdown(input.value);
+});
+
 /*==================================================================================================================================================================================
  Random Game Exercise
  Select random num between 0 and 1 every 1000ms
