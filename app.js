@@ -1,4 +1,6 @@
 // Countdown Exercise
+let counterText = document.querySelector("#counter");
+let counterDiv = document.querySelector("#counterDiv");
 
 const countdown = (num) => {
   const stopInterval = setInterval(function () {
@@ -6,11 +8,17 @@ const countdown = (num) => {
     if (num < 0) return;
     // once num reaches zero returns "DONE" and stops the interval from continuing
     if (num === 0) {
-      console.log("DONE!");
+      const done = document.createElement("p");
+      done.innerText = "Done!";
+
+      counterText.innerText = num;
+      counterText.remove();
+      counterDiv.append(done);
       clearInterval(stopInterval);
     } else {
       // Continue countdown with number being one less until reach zero
       console.log(num);
+      counterText.innerText = num;
       num--;
     }
   }, 1000);

@@ -1,0 +1,19 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: "Mochiy Pop One";
+    background-color: #d2e1cc
+    ;
+  }
+
+
+  h1 {
+    font-size: 4rem;
+    
+  }
+
+  p {
+    font-size: 4rem;
+  }
